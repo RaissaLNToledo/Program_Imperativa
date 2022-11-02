@@ -16,6 +16,7 @@ function podeSubir(altura, acompanhado = false) {
     }
 }
 
+//Testando diversos valores
 podeSubir(1.7);
 podeSubir(1.4);
 podeSubir(1.3, false);
