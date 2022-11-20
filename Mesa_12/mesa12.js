@@ -1,7 +1,7 @@
 // Grupo 3
 // Integrantes:
-// Raíssa
-// Robson
+// Raíssa da Luz Nogueira de Toledo
+// Robson Assunes dos Reis
 
 
 let encontrarGanhador = function(a, b){

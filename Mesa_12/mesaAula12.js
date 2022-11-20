@@ -1,4 +1,4 @@
-// Mesa aula 12
+// Mesa aula 12 - versão individual
 let comparacao = function(notasA, notasB){
     let pontosA = 0;
     let pontosB = 0;
@@ -30,7 +30,6 @@ let encontrarGanhador = function(participanteA, participanteB){
         console.log(`Houve um empate entre os competidores ${participanteA.nome} e ${participanteB.nome} com notas ${notasA} e ${notasB}, respectivamente com um total de ${pontosCompetidores[0]} ponto(s)`);
     }
 }
-
 let participantes = [
     {
         nome: 'Alice',
