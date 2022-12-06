@@ -78,22 +78,23 @@ const mediaPorOpiniao = (dados, tipo) => {
         return total + atual.idade;
     }, 0);
 
-    return (`A media de idades das pessoas que classificaram como ${tipo} é: ${(totalIdade/dadosFiltrados.length).toFixed(2)}`);
+    return {tipo: tipo, media: totalIdade/dadosFiltrados.length};
 };
 
-console.log(mediaPorOpiniao(dados, 'Ótimo'));
+console.log(`A media de idades das pessoas que classificaram como ${mediaPorOpiniao(dados, 'Ótimo').tipo} é ${(mediaPorOpiniao(dados, 'Ótimo').media.toFixed(2))}`);
 
 const quantidadePorOpiniao = (dados, tipo) => {
     const dadosFiltrados = filtro(dados, tipo);
-    return `A quantidade de pessoas que classificaram o filme como ${tipo} é: ${dadosFiltrados.length}`;
+    const resultado = {tipo: tipo, quantidade: dadosFiltrados.length}
+    return resultado;
 }
-console.log(quantidadePorOpiniao(dados, 'Regular'));
+console.log(`A quantidade de pessoas que classificaram o filme como ${quantidadePorOpiniao(dados, 'Regular').tipo} é: ${quantidadePorOpiniao(dados, 'Regular').quantidade}`);
 
 const porcentagemPorOpiniao = (dados, tipo) => {
     const dadosFiltrados = filtro(dados, tipo);
     const porcentagem = (dadosFiltrados.length/dados.length)
-    return (`A porcentagem de pessoas que consideraram o filme ${tipo} é ${(porcentagem *100).toFixed(2)}%`);
+    return {tipo: tipo, porcentagem: porcentagem*100};
 }
-console.log(porcentagemPorOpiniao(dados, 'Bom'));
+console.log(`A porcentagem de pessoas que consideraram o filme ${porcentagemPorOpiniao(dados, 'Bom').tipo} é ${porcentagemPorOpiniao(dados, 'Bom').porcentagem.toFixed(2)}%`);
 
 
