@@ -1,7 +1,9 @@
 //Equipe 3
 /* Integrantes:
-
-
+Bruno dos Santos Souza
+Jardel Pereira
+Larissa Resende
+Raíssa da Luz Nogueira de Toledo
 */
 
 const dados = [
@@ -93,6 +95,5 @@ const porcentagemPorOpiniao = (dados, tipo) => {
     return (`A porcentagem de pessoas que consideraram o filme ${tipo} é ${(porcentagem *100).toFixed(2)}%`);
 }
 console.log(porcentagemPorOpiniao(dados, 'Bom'));
-
 
 
