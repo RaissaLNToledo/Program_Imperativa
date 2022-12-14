@@ -1,21 +1,22 @@
 // Checkpoint 3
 // Aluna: Raíssa da Luz Nogueira de Toledo
 
-const {Aluno, listaAlunos} = require('./moduloAluno');
+const {Aluno_cl} = require('./moduloAluno');
+const {listaEstudante} = require('./estudante');
 
-let novoAluno = new Aluno('Joaquim', 0, [8, 9, 10, 9]);
+let novoAluno = new Aluno_cl('Joaquim', 0, [8, 9, 10, 9]);
 
 let curso = {
     nomeCurso: 'Javascript',
     notaAprovacao: 7,
     faltasMaxima: 3,
-    listaAlunos,
+    listaEstudante,
     addAluno: function(aluno) {
-        listaAlunos.push(aluno);
-        return listaAlunos
+        listaEstudante.push(aluno);
+        return listaEstudante
     },
     aprovado: function(alunoNome) {
-        let alunoEncontrado = listaAlunos.find((objeto) => objeto.nome === alunoNome);
+        let alunoEncontrado = listaEstudante.find((objeto) => objeto.nome === alunoNome);
         let resultado = ''
         if (!alunoEncontrado){
             return 'Aluno não encontrado';
@@ -39,7 +40,7 @@ let curso = {
     },
     listaAprovados: function() {
         let resultado = []
-        curso.listaAlunos.forEach((element) => {
+        curso.listaEstudante.forEach((element) => {
             resultado.push(curso.aprovado(element.nome));
         })
         return resultado;
@@ -48,7 +49,7 @@ let curso = {
 
 // Testando a adição de um novo aluno:
 curso.addAluno(novoAluno);
-console.log(listaAlunos);
+console.log(listaEstudante);
 
 // Testando a aprovação dos alunos:
 console.log(curso.aprovado('Ana')); //True
